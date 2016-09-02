@@ -6,7 +6,7 @@
   "repository": "alexbassy/react-dropzone-component",
   "author": "Alex Bass",
   "license": "MIT",
-  "main": "./src/Dropzone.js",
+  "main": "./src/Dropzone.jsx",
   "babel": {
     "presets": [
       "es2015",
