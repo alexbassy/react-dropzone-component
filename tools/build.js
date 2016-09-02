@@ -23,7 +23,7 @@ promise = promise.then(() => del(['dist/*']));
 // Compile source code into a distributable format with Babel
 for (const format of ['es6', 'cjs', 'umd']) {
   promise = promise.then(() => rollup.rollup({
-    entry: 'src/index.js',
+    entry: 'src/Dropzone.jsx',
     external: Object.keys(pkg.dependencies),
     plugins: [babel(Object.assign(pkg.babel, {
       babelrc: false,
@@ -32,9 +32,9 @@ for (const format of ['es6', 'cjs', 'umd']) {
       presets: pkg.babel.presets.map(x => (x === 'es2015' ? 'es2015-rollup' : x)),
     }))],
   }).then(bundle => bundle.write({
-    dest: `dist/${format === 'cjs' ? 'index' : `index.${format}`}.js`,
+    dest: `dist/${format === 'cjs' ? 'Dropzone' : `Dropzone.${format}`}.js`,
     format,
-    sourceMap: true,
+    sourceMap: false,
     moduleName: format === 'umd' ? pkg.name : undefined,
   })));
 }

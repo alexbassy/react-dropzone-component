@@ -7,4 +7,4 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-export Dropzone from './Dropzone.js';
+export Dropzone from './Dropzone.jsx';
